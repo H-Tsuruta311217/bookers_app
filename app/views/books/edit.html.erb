@@ -2,12 +2,15 @@
 
 <%= form_with model: @book do |f| %>
 
-  <h4>Title</h4>
+  <label for="book_title">Title</label>
   <%= f.text_field :title %>
 
-  <h4>Body</h4>
+  <label for="book_body">Body</label>
   <%= f.text_area :body %>
-
+  <div class="actions">
   <%= f.submit 'Update Book' %>
-
+  </div>
+  <%= link_to 'Show', book_path(@book.id), class: "text-submit" %>
+  |
+  <%= link_to "Back", '/books', class: "text-submit" %>
 <% end %>
